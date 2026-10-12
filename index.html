@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta name="description" content="Kalkulator BMI sederhana untuk menghitung indeks massa tubuh dan memahami kategorinya.">
+  <title>Kalkulator BMI — Kenali Indeks Massa Tubuhmu</title>
+  <style>
+    :root{--ink:#18352f;--muted:#687a74;--green:#24745c;--mint:#dff1e8;--paper:#fff;--bg:#f6f7f2;--line:#e6ebe6;--orange:#edaa55;--shadow:0 22px 60px rgba(25,62,51,.09)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}button,input{font:inherit}.page{max-width:1120px;margin:auto;padding:30px 24px 64px}.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:62px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.03em}.brand-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:13px;background:#dcefe5;color:var(--green)}.brand-icon svg{width:21px}.tag{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:7px 13px;background:#ffffff9c}.hero{max-width:720px;margin:0 auto 36px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:7px;color:var(--green);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#6bb591}.hero h1{font-size:clamp(38px,6vw,62px);line-height:1.05;letter-spacing:-.06em;margin:14px 0 17px}.hero p{margin:0 auto;color:var(--muted);font-size:17px;max-width:560px}.layout{display:grid;grid-template-columns:1.04fr .96fr;gap:22px;align-items:stretch}.card{background:var(--paper);border:1px solid #e9ede8;border-radius:24px;box-shadow:var(--shadow)}.form-card{padding:30px}.card-heading{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:26px}.card-heading h2{margin:0;font-size:21px;letter-spacing:-.03em}.card-heading p{margin:5px 0 0;color:var(--muted);font-size:14px}.unit-switch{display:flex;background:#f2f5f1;border-radius:10px;padding:4px;gap:2px}.unit-switch button{border:0;background:transparent;border-radius:7px;padding:6px 10px;color:var(--muted);font-weight:700;font-size:12px;cursor:pointer}.unit-switch button.active{background:#fff;color:var(--green);box-shadow:0 1px 4px #152b221a}.fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:8px}.field label{font-size:13px;font-weight:700}.input-wrap{position:relative}.input-wrap input{width:100%;height:55px;border:1px solid #dfe7e0;border-radius:12px;padding:0 49px 0 15px;color:var(--ink);font-weight:700;font-size:17px;outline:none;transition:.2s}.input-wrap input:focus{border-color:#58a181;box-shadow:0 0 0 4px #dff1e8}.unit{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--muted)}.hint{font-size:11px;color:#85928c;margin-top:-3px}.gender{margin-top:20px}.gender-label{font-size:13px;font-weight:700;margin-bottom:9px}.gender-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.gender-option{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;color:var(--muted);font-size:14px;font-weight:650;transition:.2s}.gender-option:has(input:checked){border-color:#69a989;background:#f1f8f3;color:var(--ink)}.gender-option input{accent-color:var(--green);margin:0}.calculate{width:100%;height:54px;margin-top:23px;border:0;border-radius:13px;background:var(--green);color:white;font-weight:750;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:transform .15s,background .15s}.calculate:hover{background:#1d634e;transform:translateY(-1px)}.calculate svg{width:18px}.error{color:#b84337;font-size:13px;min-height:20px;margin:9px 0 0}.result-card{padding:30px;background:#f0f7f1;display:flex;flex-direction:column;position:relative;overflow:hidden}.result-card:after{content:"";width:220px;height:220px;position:absolute;right:-106px;top:-107px;border-radius:50%;background:#e0f0e4}.result-head{position:relative;z-index:1}.result-head h2{font-size:21px;margin:0;letter-spacing:-.03em}.result-head p{font-size:14px;color:var(--muted);margin:5px 0 0}.score-area{display:flex;align-items:center;gap:24px;margin:30px 0 25px;position:relative;z-index:1}.score{font-size:64px;line-height:1;letter-spacing:-.07em;font-weight:800}.score-label{color:var(--muted);font-size:13px;margin-top:7px}.status{font-size:13px;font-weight:750;color:var(--green);background:#dcefe5;border-radius:99px;padding:7px 11px;white-space:nowrap}.scale{position:relative;height:14px;border-radius:20px;background:linear-gradient(90deg,#75b6a0 0 25%,#9cc568 25% 48%,#efbf68 48% 72%,#dd8d72 72% 100%);margin:0 1px 10px}.marker{position:absolute;top:50%;left:2%;width:22px;height:22px;border-radius:50%;border:4px solid #fff;background:#18352f;box-shadow:0 2px 7px #0003;transform:translate(-50%,-50%);transition:left .5s ease}.scale-labels{display:flex;justify-content:space-between;color:#7c8b83;font-size:10px}.result-copy{border-top:1px solid #dce9df;margin-top:23px;padding-top:20px;color:#53675e;font-size:14px;min-height:64px}.weight-range{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding:15px 16px;background:#fff;border-radius:13px}.weight-range span{color:var(--muted);font-size:12px}.weight-range strong{font-size:14px}.below{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:22px}.info-card{padding:25px 28px}.info-card h2{font-size:18px;margin:0 0 15px;letter-spacing:-.03em}.table{width:100%;border-collapse:collapse;font-size:13px}.table th{text-align:left;color:#8a9891;font-size:11px;font-weight:700;padding:0 10px 9px}.table td{padding:10px;border-top:1px solid #edf0ec}.table td:last-child{text-align:right;font-weight:700}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px}.notice{padding:22px 23px;background:#fff9ed;border:1px solid #f4e8d1;border-radius:20px}.notice h2{font-size:16px;margin:0 0 8px}.notice p{font-size:13px;color:#746a58;margin:0}.footer{text-align:center;font-size:12px;color:#87928c;margin-top:30px}.footer strong{color:#64746c}.toast{position:fixed;inset:auto 20px 20px auto;background:#173c32;color:#fff;padding:12px 17px;border-radius:12px;font-size:13px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}
+    @media(max-width:760px){.page{padding:20px 16px 40px}.topbar{margin-bottom:42px}.layout,.below{grid-template-columns:1fr}.form-card,.result-card{padding:23px}.hero{margin-bottom:27px}.hero p{font-size:15px}.score-area{margin:24px 0 21px}.below{gap:14px}}
+    @media(max-width:390px){.card-heading{gap:10px}.fields{gap:11px}.input-wrap input{padding-left:11px}.tag{font-size:11px}.score{font-size:56px}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 5-7"/><path d="M16 6h3v3"/></svg></span>ruangsehat</div>
+      <span class="tag">Alat kesehatan sederhana</span>
+    </header>
+    <section class="hero">
+      <span class="eyebrow">Pahami tubuhmu</span>
+      <h1>Kalkulator BMI</h1>
+      <p>Hitung indeks massa tubuhmu dan dapatkan gambaran awal tentang kategori berat badan.</p>
+    </section>
+    <section class="layout" aria-label="Kalkulator dan hasil BMI">
+      <form class="card form-card" id="bmi-form" novalidate>
+        <div class="card-heading"><div><h2>Masukkan datamu</h2><p>Isi tinggi dan berat badan saat ini.</p></div>
+          <div class="unit-switch" role="group" aria-label="Satuan tinggi"><button type="button" class="active" data-unit="cm" aria-pressed="true">cm</button><button type="button" data-unit="ft" aria-pressed="false">ft / in</button></div>
+        </div>
+        <div class="fields">
+          <div class="field"><label for="height">Tinggi badan</label><div class="input-wrap"><input id="height" type="number" min="1" max="250" step="any" placeholder="165" inputmode="decimal" required><span class="unit" id="height-unit">cm</span></div><span class="hint" id="height-hint">Contoh: 165 cm</span></div>
+          <div class="field"><label for="weight">Berat badan</label><div class="input-wrap"><input id="weight" type="number" min="1" max="500" step="any" placeholder="60" inputmode="decimal" required><span class="unit">kg</span></div><span class="hint">Contoh: 60 kg</span></div>
+        </div>
+        <div class="gender"><div class="gender-label">Jenis kelamin <span style="font-weight:400;color:#89968f">(opsional)</span></div><div class="gender-options">
+          <label class="gender-option"><input type="radio" name="gender" value="wanita"><span>Wanita</span></label>
+          <label class="gender-option"><input type="radio" name="gender" value="pria"><span>Pria</span></label>
+        </div></div>
+        <button class="calculate" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4zM8 9h.01M12 9h.01M16 9h.01M8 13h.01M12 13h.01M16 13h.01M8 17h8"/></svg>Hitung BMI</button>
+        <p class="error" id="error" role="alert" aria-live="polite"></p>
+      </form>
+      <section class="card result-card" aria-live="polite">
+        <div class="result-head"><h2>Hasil perhitungan</h2><p>Perkiraan berdasarkan data yang kamu masukkan.</p></div>
+        <div class="score-area"><div><div class="score" id="score">—</div><div class="score-label">Indeks massa tubuh (kg/m²)</div></div><span class="status" id="status">Menunggu data</span></div>
+        <div class="scale" aria-label="Skala kategori BMI"><span class="marker" id="marker"></span></div>
+        <div class="scale-labels"><span>Kurang</span><span>Normal</span><span>Berlebih</span><span>Obesitas</span></div>
+        <p class="result-copy" id="result-copy">Masukkan tinggi dan berat badan, lalu tekan tombol “Hitung BMI” untuk melihat hasil.</p>
+        <div class="weight-range"><span>Rentang berat acuan untuk tinggimu</span><strong id="range">—</strong></div>
+      </section>
+    </section>
+    <section class="below">
+      <div class="card info-card"><h2>Panduan kategori BMI dewasa</h2><table class="table"><thead><tr><th>Kategori</th><th style="text-align:right">BMI (kg/m²)</th></tr></thead><tbody>
+        <tr><td><span class="dot" style="background:#75b6a0"></span>Berat badan kurang</td><td>&lt; 18,5</td></tr>
+        <tr><td><span class="dot" style="background:#9cc568"></span>Berat badan normal</td><td>18,5 – 24,9</td></tr>
+        <tr><td><span class="dot" style="background:#efbf68"></span>Berat badan berlebih</td><td>25 – 29,9</td></tr>
+        <tr><td><span class="dot" style="background:#dd8d72"></span>Obesitas</td><td>≥ 30</td></tr>
+      </tbody></table></div>
+      <aside class="notice"><h2>Catatan penting</h2><p>BMI adalah alat skrining sederhana, bukan diagnosis medis. Hasil tidak membedakan massa otot dan lemak. Kategori dewasa ini tidak ditujukan untuk anak-anak, remaja, ibu hamil, atau atlet. Konsultasikan kondisi kesehatanmu dengan tenaga kesehatan.</p></aside>
+    </section>
+    <footer class="footer">Dibuat untuk membantu kamu <strong>lebih mengenal kesehatan diri.</strong></footer>
+  </main>
+  <div class="toast" id="toast" role="status">BMI berhasil dihitung</div>
+  <script>
+    (()=>{
+      const form=document.querySelector('#bmi-form'),height=document.querySelector('#height'),weight=document.querySelector('#weight'),error=document.querySelector('#error'),score=document.querySelector('#score'),status=document.querySelector('#status'),copy=document.querySelector('#result-copy'),range=document.querySelector('#range'),marker=document.querySelector('#marker'),unitButtons=document.querySelectorAll('[data-unit]'),heightUnit=document.querySelector('#height-unit'),heightHint=document.querySelector('#height-hint');
+      let unit='cm',lastHeightCm=null;
+      const fmt=n=>new Intl.NumberFormat('id-ID',{maximumFractionDigits:1}).format(n);
+      unitButtons.forEach(btn=>btn.addEventListener('click',()=>{if(btn.dataset.unit===unit)return;unit=btn.dataset.unit;unitButtons.forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',b===btn?'true':'false')});heightUnit.textContent=unit==='cm'?'cm':'ft';height.placeholder=unit==='cm'?'165':'5.5';height.max=unit==='cm'?'250':'8';heightHint.textContent=unit==='cm'?'Contoh: 165 cm':'Masukkan tinggi dalam kaki desimal, contoh: 5,5 ft';height.value='';error.textContent='';height.focus()}));
+      form.addEventListener('submit',e=>{e.preventDefault();error.textContent='';const h=Number(height.value.replace(',','.')),w=Number(weight.value.replace(',','.'));if(!height.value||!weight.value||!Number.isFinite(h)||!Number.isFinite(w)){error.textContent='Isi tinggi dan berat badan dengan angka yang valid.';return}const cm=unit==='cm'?h:h*30.48;if(cm<80||cm>250){error.textContent='Masukkan tinggi antara 80–250 cm.';height.focus();return}if(w<15||w>350){error.textContent='Masukkan berat antara 15–350 kg.';weight.focus();return}lastHeightCm=cm;const m=cm/100,bmi=w/(m*m);let category,description,color;if(bmi<18.5){category='Berat kurang';description='BMI-mu berada di bawah rentang acuan dewasa. Pertimbangkan untuk mendiskusikan pola makan dan kesehatanmu dengan tenaga kesehatan.';color='#397b68'}else if(bmi<25){category='Berat normal';description='BMI-mu berada dalam rentang acuan dewasa. Pertahankan kebiasaan makan seimbang, aktivitas fisik, dan istirahat yang baik.';color='#527d3f'}else if(bmi<30){category='Berat berlebih';description='BMI-mu berada di atas rentang acuan dewasa. Perubahan kebiasaan secara bertahap dapat membantu; tenaga kesehatan dapat memberi saran yang sesuai.';color='#a46a1d'}else{category='Obesitas';description='BMI-mu berada di kategori obesitas menurut panduan dewasa. Hasil ini bukan diagnosis; konsultasikan langkah yang tepat dengan tenaga kesehatan.';color='#a64d3a'}score.textContent=fmt(bmi);status.textContent=category;status.style.color=color;status.style.background=bmi<18.5?'#e1f0eb':bmi<25?'#e6efd9':bmi<30?'#faebd5':'#f7e3dc';copy.textContent=description;const low=18.5*m*m,high=24.9*m*m;range.textContent=fmt(low)+'–'+fmt(high)+' kg';marker.style.left=Math.max(2,Math.min(98,((bmi-15)/25)*100))+'%';const toast=document.querySelector('#toast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)});
+      [height,weight].forEach(el=>el.addEventListener('input',()=>{error.textContent=''}));
+    })();
+  </script>
+</body>
+</html>
